@@ -20,9 +20,17 @@ support.test-encryptor2(my-encryptor2)
 support.encryptor3("holmes....")
 fun my-encryptor3(s :: String) -> String:
   doc: "changes the punctuation" 
-  string-replace(s, "!" , ".")
+  string-replace(s, "." , "!")
+end
+string-replace("holmes....", ".", "!")
+
+support.test-encryptor3(my-encryptor3)
+
+support.encryptor4("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+fun my-encryptor4(s :: String) -> String:
+  doc: "repeats the letters" 
+  string-replace(s, "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ,"ABCDABCDABCDABCDABCD")
 end
 
-
-
+support.test-encryptor4(my-encryptor4)
 
